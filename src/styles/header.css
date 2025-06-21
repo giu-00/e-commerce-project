@@ -1,0 +1,18 @@
+.header {
+  display: flex;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}

@@ -1,0 +1,15 @@
+.button {
+  min-width: 7rem;
+  padding: 0.7rem;
+  font-size: 1.1rem;
+  border: 2px solid black;
+  border-radius: 0.7rem;
+  background-color: #fdd85d;
+  cursor: pointer;
+  box-shadow: 0 4px;
+}
+
+.button:active {
+  box-shadow: 0 1px;
+  transform: translateY(3px);
+}

@@ -1,0 +1,35 @@
+.tag {
+  max-width: 9rem;
+  height: 2rem;
+  border: 2px solid black;
+  border-radius: 0.7rem;
+  padding: 0.2rem 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  background-color: #8e4162;
+  color: #fffdf7;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag-Clothes {
+  background-color: #f87060;
+}
+
+.tag-Electronics {
+  background-color: #a8dcd9;
+}
+
+.tag-Furniture {
+  background-color: #3d3b8e;
+}
+
+.tag-Shoes {
+  background-color: #8e4162;
+}
+
+.tag-Miscellaneous {
+  background-color: #748067;
+}
