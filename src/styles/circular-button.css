@@ -1,15 +1,14 @@
-.cart {
+.circular-button {
   width: 3rem;
   height: 3rem;
   border-radius: 2rem;
   border: 2px solid black;
   cursor: pointer;
   font-size: large;
-  background-color: #d1b2e0;
   box-shadow: 0 4px;
 }
 
-.cart:active {
+.circular-button:active {
   box-shadow: 0 1px;
   transform: translateY(3px);
 }

@@ -4,3 +4,22 @@
   width: 80%;
   margin: 2rem auto;
 }
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.home-tag {
+  box-shadow: 0 4px black;
+  cursor: pointer;
+}
+
+.home-tag:active {
+  box-shadow: 0 1px;
+  transform: translateY(3px);
+}

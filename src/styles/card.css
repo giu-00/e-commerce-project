@@ -1,0 +1,52 @@
+.card {
+  width: 25rem;
+  height: 30rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+.card:hover {
+  box-shadow: 0 4px;
+}
+
+.card-image {
+  height: 60%;
+  width: 100%;
+  border-top-right-radius: 1.9rem;
+  border-top-left-radius: 1.9rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  margin-top: 0.5rem;
+  height: 2rem;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-tag {
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.card-price {
+  font-size: 2rem;
+}
+
+.card-buttons-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
