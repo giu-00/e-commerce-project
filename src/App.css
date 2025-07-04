@@ -5,6 +5,7 @@
 }
 body {
   background-color: #fffdf7;
+  min-width: 430px;
 }
 
 .saved {

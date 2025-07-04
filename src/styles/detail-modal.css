@@ -1,0 +1,40 @@
+.p-dialog {
+  width: 90%;
+  height: 100%;
+  border: 2px solid black;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.p-dialog-header {
+  padding: 1rem;
+  background-color: #fffdf7;
+}
+
+.p-dialog-content {
+  padding: 1rem;
+  background-color: #fffdf7;
+}
+
+.p-galleria-thumbnail-container {
+  background-color: transparent !important;
+  margin-top: 1rem;
+}
+
+.gallery-section {
+  width: 40%;
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .gallery-section {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

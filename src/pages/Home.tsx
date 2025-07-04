@@ -2,40 +2,41 @@ import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Tag from "../components/Tag";
 import "../styles/home.css";
-import { getCategories } from "../services/getCategories";
-import type { Category } from "../services/getCategories";
+import { getCategories, type Category } from "../services/getCategories";
+import { getProducts, type Products } from "../services/getProducts";
 import Card from "../components/Card";
-import { getProducts, type Product } from "../services/getProducts";
 
 const Home: React.FC = () => {
-  const [category, setCategory] = useState<Category[]>([]);
-  const [product, setProduct] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [products, setProducts] = useState<Products[]>([]);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchCategories = async () => {
       try {
         const categoryData = await getCategories();
-        setCategory(categoryData);
+        setCategories(categoryData);
       } catch (error) {
         console.error("Unable to get categories", error);
       }
     };
-    getData();
+
+    fetchCategories();
   }, []);
 
   useEffect(() => {
-    const getData = async () => {
+    const fetchProducts = async () => {
       try {
         const productData = await getProducts();
-        setProduct(productData);
+        setProducts(productData);
       } catch (error) {
         console.error("Unable to get products", error);
       }
     };
-    getData();
+
+    fetchProducts();
   }, []);
 
-  const slicedCategories = category.slice(0, 5);
+  const slicedCategories = categories.slice(0, 5);
 
   return (
     <>
@@ -46,13 +47,14 @@ const Home: React.FC = () => {
         ))}
       </div>
       <div className="card-container">
-        {product.map((card) => (
+        {products.map((card) => (
           <Card
+            key={card.id}
+            id={card.id}
             images={card.images[0]}
             title={card.title}
             category={card.category.name}
             price={card.price}
-            key={card.id}
           />
         ))}
       </div>

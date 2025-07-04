@@ -1,10 +1,14 @@
 import "./App.css";
+import { PrimeReactProvider } from "primereact/api";
+
 import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Home />
+      <PrimeReactProvider>
+        <Home />
+      </PrimeReactProvider>
     </>
   );
 }

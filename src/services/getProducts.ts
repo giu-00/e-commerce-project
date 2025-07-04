@@ -1,7 +1,6 @@
-import { apiRequest } from "./apiClient";
 import type { Category } from "./getCategories";
 
-export interface Product {
+export interface Products {
   id: number;
   title: string;
   slug: string;
@@ -11,12 +10,13 @@ export interface Product {
   images: string[];
 }
 
-export const getProducts = async (): Promise<Product[]> => {
+export const getProducts = async (): Promise<Products[]> => {
   try {
-    const response = await apiRequest<Product[]>("/products", "GET");
-    return response;
+    const response = await fetch("/data/products.json");
+    if (!response.ok) throw new Error("Failed to fetch local products");
+    return await response.json();
   } catch (error) {
-    console.error("Can't load products", error);
+    console.error("Can't load local products", error);
     throw error;
   }
 };
