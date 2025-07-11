@@ -11,6 +11,11 @@
   background-color: #fffdf7;
 }
 
+.p-dialog-title {
+  color: black;
+  font-size: 1.5rem;
+}
+
 .p-dialog-content {
   padding: 1rem;
   background-color: #fffdf7;
@@ -21,8 +26,102 @@
   margin-top: 1rem;
 }
 
+.dialog-content {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.info-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .gallery-section {
   width: 40%;
+}
+
+.title-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.product-title {
+  color: black;
+}
+
+.product-description {
+  color: black;
+  font-size: 1.1rem;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: black;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-to-cart {
+  width: 40%;
+  height: 3rem;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-plus,
+.button-minus,
+.quantity-number {
+  width: 3rem;
+  height: 3rem;
+}
+
+.button-plus,
+.button-minus {
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.button-minus {
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-top-left-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+}
+
+.button-plus {
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  border-top-right-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+
+.quantity-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  background-color: #d1b2e0;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  color: black;
 }
 
 @media (max-width: 768px) {
@@ -30,11 +129,25 @@
     width: 80%;
     margin: 0 auto;
   }
+  .info-container {
+    width: 80%;
+    margin: 0 auto;
+    gap: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1100px) {
   .gallery-section {
     width: 70%;
     margin: 0 auto;
+  }
+  .info-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
   }
 }

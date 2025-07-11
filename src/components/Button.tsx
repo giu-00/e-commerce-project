@@ -3,10 +3,16 @@ import "../styles/button.css";
 
 interface ButtonProps {
   text: string;
+  className?: string;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ text }) => {
-  return <button className="button">{text}</button>;
+const Button: React.FC<ButtonProps> = ({ text, className, onClick }) => {
+  return (
+    <button className={`button ${className}`} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

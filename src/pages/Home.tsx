@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import Tag from "../components/Tag";
 import "../styles/home.css";
 import { getCategories, type Category } from "../services/getCategories";
@@ -40,7 +39,6 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Header />
       <div className="tag-container">
         {slicedCategories.map((tag) => (
           <Tag label={tag.name} key={tag.id} className="home-tag" />

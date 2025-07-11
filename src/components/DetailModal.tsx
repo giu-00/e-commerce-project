@@ -3,6 +3,10 @@ import { Dialog } from "primereact/dialog";
 import "../styles/detail-modal.css";
 import { getProductById, type Product } from "../services/getProductById";
 import { Galleria } from "primereact/galleria";
+import Tag from "./Tag";
+import Button from "./Button";
+import CircularButton from "./CircularButton";
+import { faHeartCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 interface DetailModalProps {
   visible: boolean;
@@ -16,6 +20,9 @@ const DetailModal: React.FC<DetailModalProps> = ({
   productId,
 }) => {
   const [product, setProduct] = useState<Product | null>(null);
+
+  const [quantity, setQuantity] = useState(0);
+
   const responsiveOptions = [
     {
       breakpoint: "991px",
@@ -53,43 +60,75 @@ const DetailModal: React.FC<DetailModalProps> = ({
     })) || [];
 
   return (
-    <Dialog
-      header={product?.title || "Dettagli prodotto"}
-      visible={visible}
-      onHide={onHide}
-    >
-      <div className="gallery-section">
-        <Galleria
-          value={galleryItems}
-          responsiveOptions={responsiveOptions}
-          item={(item) => (
-            <img
-              src={item.original}
-              alt="Product"
-              style={{
-                width: "100%",
-                borderRadius: "12px",
-                objectFit: "cover",
-              }}
-            />
-          )}
-          thumbnail={(item) => (
-            <img
-              src={item.thumbnail}
-              alt="Thumbnail"
-              style={{
-                width: "60px",
-                height: "60px",
-                objectFit: "cover",
-                borderRadius: "8px",
-              }}
-            />
-          )}
-          showThumbnails={true}
-          showIndicators={false}
-          showItemNavigators={true}
-          showThumbnailNavigators={false}
-        />
+    <Dialog visible={visible} onHide={onHide} dismissableMask draggable={false}>
+      <div className="dialog-content">
+        <div className="gallery-section">
+          <Galleria
+            value={galleryItems}
+            responsiveOptions={responsiveOptions}
+            circular
+            item={(item) => (
+              <img
+                src={item.original}
+                alt="Product"
+                style={{
+                  width: "100%",
+                  borderRadius: "12px",
+                  objectFit: "cover",
+                }}
+              />
+            )}
+            thumbnail={(item) => (
+              <img
+                src={item.thumbnail}
+                alt="Thumbnail"
+                style={{
+                  width: "60px",
+                  height: "60px",
+                  objectFit: "cover",
+                  borderRadius: "8px",
+                }}
+              />
+            )}
+            showThumbnails={true}
+            showIndicators={false}
+            showItemNavigators={true}
+            showThumbnailNavigators={false}
+          />
+        </div>
+        <div className="info-container">
+          <div className="title-group">
+            <h1 className="product-title">{product?.title}</h1>
+            {product?.category && <Tag label={product.category.name} />}
+            <p className="product-description">{product?.description}</p>
+          </div>
+
+          <div className="product-buttons">
+            <h2 className="product-price">{product?.price}€</h2>
+            <div className="quantity">
+              <button
+                className="button-minus"
+                onClick={() => {
+                  if (quantity != 0) {
+                    setQuantity(quantity - 1);
+                  }
+                }}
+              >
+                -
+              </button>
+              <p className="quantity-number">{quantity}</p>
+
+              <button
+                className="button-plus"
+                onClick={() => setQuantity(quantity + 1)}
+              >
+                +
+              </button>
+            </div>
+            <Button text="Add to Cart" className="add-to-cart" />
+            <CircularButton icon={faHeartCirclePlus} className="saved" />
+          </div>
+        </div>
       </div>
     </Dialog>
   );
