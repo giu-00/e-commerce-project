@@ -8,7 +8,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router";
+import { NavLink } from "react-router-dom";
 import LoginModal from "./LoginModal";
 
 const Header: React.FC = () => {
@@ -26,10 +26,10 @@ const Header: React.FC = () => {
             <p className="logo">E-Commerce</p>
           </NavLink>
           <div className="buttons-container">
-            <NavLink to={"cart"}>
+            <NavLink to={"/cart"}>
               <CircularButton icon={faCartShopping} className="cart" />
             </NavLink>
-            <NavLink to={"favourites"}>
+            <NavLink to={"/favourites"}>
               <CircularButton icon={faHeart} className="saved" />
             </NavLink>
 
@@ -44,17 +44,20 @@ const Header: React.FC = () => {
         </div>
         {burger && (
           <div className="mobile-menu">
+            <NavLink to={"/cart"}>
+              <div className="mobile-menu-item" onClick={toggleBurger}>
+                <FontAwesomeIcon icon={faCartShopping} />
+                <span>Cart</span>
+              </div>
+            </NavLink>
+            <NavLink to={"/favourites"}>
+              <div className="mobile-menu-item" onClick={toggleBurger}>
+                <FontAwesomeIcon icon={faHeart} />
+                <span>Favourites</span>
+              </div>
+            </NavLink>
             <div className="mobile-menu-item" onClick={toggleBurger}>
-              <FontAwesomeIcon icon={faCartShopping} />
-              <span>Cart</span>
-            </div>
-
-            <div className="mobile-menu-item" onClick={toggleBurger}>
-              <FontAwesomeIcon icon={faHeart} />
-              <span>Favourites</span>
-            </div>
-            <div className="mobile-menu-item" onClick={toggleBurger}>
-              <Button text="Login" />
+              <Button text="Login" type="button" />
             </div>
           </div>
         )}

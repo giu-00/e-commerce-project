@@ -19,6 +19,12 @@
   cursor: pointer;
 }
 
+a {
+  color: black;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
 .logo {
   font-size: 2rem;
   font-family: sans-serif;

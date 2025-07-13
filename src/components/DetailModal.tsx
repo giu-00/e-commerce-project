@@ -7,6 +7,7 @@ import Tag from "./Tag";
 import Button from "./Button";
 import CircularButton from "./CircularButton";
 import { faHeartCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 
 interface DetailModalProps {
   visible: boolean;
@@ -125,8 +126,12 @@ const DetailModal: React.FC<DetailModalProps> = ({
                 +
               </button>
             </div>
-            <Button text="Add to Cart" className="add-to-cart" />
-            <CircularButton icon={faHeartCirclePlus} className="saved" />
+            <NavLink to={"/cart"} className="cart-link">
+              <Button text="Add to Cart" className="add-to-cart" />
+            </NavLink>
+            <NavLink to={"/favourites"}>
+              <CircularButton icon={faHeartCirclePlus} className="saved" />
+            </NavLink>
           </div>
         </div>
       </div>

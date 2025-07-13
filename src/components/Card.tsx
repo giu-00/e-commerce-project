@@ -8,6 +8,7 @@ import {
   faHeartCirclePlus,
 } from "@fortawesome/free-solid-svg-icons";
 import DetailModal from "./DetailModal";
+import { NavLink } from "react-router-dom";
 
 interface CardProps {
   id: number;
@@ -35,8 +36,12 @@ const Card: React.FC<CardProps> = ({ id, images, title, category, price }) => {
                 className="view"
                 onClick={() => setShowModal(true)}
               />
-              <CircularButton icon={faCartPlus} className="cart" />
-              <CircularButton icon={faHeartCirclePlus} className="saved" />
+              <NavLink to={"/cart"}>
+                <CircularButton icon={faCartPlus} className="cart" />
+              </NavLink>
+              <NavLink to={"/favourites"}>
+                <CircularButton icon={faHeartCirclePlus} className="saved" />
+              </NavLink>
             </div>
           </div>
         </div>

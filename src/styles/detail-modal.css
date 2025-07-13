@@ -69,10 +69,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .add-to-cart {
-  width: 40%;
+  width: 95%;
   height: 3rem;
 }
 
@@ -122,6 +129,7 @@
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   color: black;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
