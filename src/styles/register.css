@@ -1,0 +1,27 @@
+.register-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  height: 85dvh;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.register-title {
+  margin-bottom: 5rem;
+}
+
+.input.error {
+  border: 2px solid #e74c3c;
+  transition: border 0.3s;
+}
