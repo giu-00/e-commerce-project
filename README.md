@@ -1,54 +1,50 @@
-# React + TypeScript + Vite
+# E-Commerce Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**React + TypeScript**  
 
-Currently, two official plugins are available:
+A frontend portfolio project built with **React**, **TypeScript**, and **PrimeReact** components, allowing users to browse and interact with a simulated e-commerce interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
 
-## Expanding the ESLint configuration
+- Browse available products with detailed views and image galleries.  
+- Add products to **favorites** and **cart** (login required).  
+- User registration and login functionality.  
+- View a **cart summary** without actual checkout.  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies Used
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React**  
+- **TypeScript**  
+- **PrimeReact** (UI components)  
+- **CSS / SCSS** for custom styling  
+
+## Installation & Running Locally
+
+1. Clone the repository:  
+```bash
+git clone https://github.com/giu-00/e-commerce-project.git
+```
+2. Navigate to the project folder
+```bash
+cd e-commerce-project
+```
+3. Install dependencies:
+```bash
+npm install
+```
+4. Start the development server:
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- `/src/components` – Main components (product cards, detail modal, login/register modal, buttons, etc.)  
+- `/src/pages` – Main pages (Home, Cart, Favourites, Login/Register)
+- - `/src/services` – API calls (getProducts, getCategories, etc.)  
+- `/src/styles` – CSS files  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Notes
+
+- Adding products to the cart or favorites requires user login.  
+- The project is **frontend-only**: the cart is simulated, no real purchases are made.
