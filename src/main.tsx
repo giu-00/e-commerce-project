@@ -1,8 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/themes/soho-light/theme.css";
 import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.tsx";

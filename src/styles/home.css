@@ -25,3 +25,66 @@
   box-shadow: 0 1px;
   transform: translateY(3px);
 }
+
+.p-paginator .p-dropdown-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0.5rem;
+}
+
+.p-dropdown-item {
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.3rem;
+}
+
+.p-dropdown-item.p-highlight {
+  background-color: white;
+  color: black;
+  border-radius: 0.3rem;
+  border: 2px solid black;
+}
+
+.p-paginator {
+  background: transparent !important;
+  border: none !important;
+  padding: 1.5rem;
+  color: black;
+}
+
+.p-paginator-element {
+  color: black;
+}
+
+.p-highlight {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+}
+
+.p-paginator-element:hover {
+  color: black;
+}
+
+.p-dropdown {
+  background: transparent !important;
+  border: 2px solid black;
+  color: black;
+}
+
+.p-dropdown:focus,
+.p-dropdown.p-focus {
+  background: transparent !important;
+  border: 2px solid black;
+  color: black;
+  box-shadow: none !important;
+}
+
+.p-dropdown-label {
+  color: black;
+}
+
+.p-dropdown-trigger-icon {
+  color: black;
+}
